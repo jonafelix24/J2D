@@ -14,30 +14,41 @@ public class J2DMain extends JFrame implements ActionListener {
 	private JButton btnTexture;
 	private JButton btnClip;
 	private JButton btnTransform;
+	private JButton btnComposite;
+	private JButton btnGeomShapes;
+	private JButton btnGeneralPath;
 
 	public J2DMain() {
 		super("Ejemplos Java2D");
 		Container containerPanel = getContentPane();
 		containerPanel.setLayout(new FlowLayout());
-		//setSize(500, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		btnAlpha = new JButton("Alpha");
 		btnTexture = new JButton("Texture");
 		btnClip = new JButton("Clip");
 		btnTransform = new JButton("Transform");
+		btnComposite = new JButton("Composite");
+		btnGeomShapes = new JButton("Geom shapes");
+		btnGeneralPath = new JButton("GeneralPath");
 		
 		containerPanel.add(btnAlpha);
 		containerPanel.add(btnTexture);
 		containerPanel.add(btnClip);
 		containerPanel.add(btnTransform);
+		containerPanel.add(btnComposite);
+		containerPanel.add(btnGeomShapes);
+		containerPanel.add(btnGeneralPath);
 		
 		btnAlpha.addActionListener(this);
 		btnTexture.addActionListener(this);
 		btnClip.addActionListener(this);
 		btnTransform.addActionListener(this);
+		btnComposite.addActionListener(this);
+		btnGeomShapes.addActionListener(this);
+		btnGeneralPath.addActionListener(this);
 		
-		pack();
+		setSize(500, 300);
 		setLocationRelativeTo(null);
 	}
 	
@@ -61,6 +72,21 @@ public class J2DMain extends JFrame implements ActionListener {
 		if (e.getSource().equals(btnTransform)) {
 			TransformFrame transformFrame = new TransformFrame(this);
 			transformFrame.setVisible(true);
+			return;
+		}
+		if (e.getSource().equals(btnComposite)) {
+			CompositeFrame compositeFrame = new CompositeFrame(this);
+			compositeFrame.setVisible(true);
+			return;
+		}
+		if (e.getSource().equals(btnGeomShapes)) {
+			GeomShapesFrame geomShapesFrame = new GeomShapesFrame(this);
+			geomShapesFrame.setVisible(true);
+			return;
+		}
+		if (e.getSource().equals(btnGeneralPath)) {
+			GeneralPathFrame generalPathFrame = new GeneralPathFrame(this);
+			generalPathFrame.setVisible(true);
 			return;
 		}
 	}
