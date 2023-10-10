@@ -21,7 +21,7 @@ public class GeomShapesFrame extends BaseFrame {
 	}
 	
 	@Override
-	public void paint(Graphics2D g2) {
+	public void render(Graphics2D g2) {
 		// Dibujar linea
 		g2.setColor(Color.pink);
 		g2.setStroke(new BasicStroke(3.0f));

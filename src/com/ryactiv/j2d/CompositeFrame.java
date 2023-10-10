@@ -16,7 +16,7 @@ public class CompositeFrame extends BaseFrame {
 	}
 	
 	@Override
-	public void paint(Graphics2D g2) {
+	public void render(Graphics2D g2) {
 		Dimension d = getSize();
 		int w = d.width;
 		int h = d.height;

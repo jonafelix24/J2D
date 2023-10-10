@@ -13,7 +13,7 @@ public class GeneralPathFrame extends BaseFrame {
 	}
 	
 	@Override
-	public void paint(Graphics2D g2) {
+	public void render(Graphics2D g2) {
 		g2.setColor(Color.green);
 		GeneralPath gp = new GeneralPath();
 		gp.moveTo(50.0f,50.0f);

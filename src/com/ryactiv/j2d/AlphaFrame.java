@@ -14,7 +14,7 @@ public class AlphaFrame extends BaseFrame {
 	}
 	
 	@Override
-	public void paint(Graphics2D g2) {
+	public void render(Graphics2D g2) {
 		g2.setColor(Color.red);
 		Rectangle2D r1 = new Rectangle2D.Float(250.0f, 50.0f, 100.0f, 100.0f);
 		g2.fill(r1);

@@ -29,15 +29,18 @@ public class BaseFrame extends JFrame {
 	
 	@Override
 	public void paint(Graphics g) {
+		super.paint(g);
+		
 		Graphics2D g2 = (Graphics2D) g;
 		RenderingHints renderingHints = new RenderingHints(
 				RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		renderingHints.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_SPEED);
 		g2.setRenderingHints(renderingHints);
-		paint(g2);
+				
+		render(g2);
 	}
 	
-	public void paint(Graphics2D g2) {
+	public void render(Graphics2D g2) {
 		// Empty
 	}
 

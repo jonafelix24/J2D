@@ -16,7 +16,7 @@ public class TextureFrame extends BaseFrame {
 	}
 	
 	@Override
-	public void paint(Graphics2D g2) {
+	public void render(Graphics2D g2) {
 		BufferedImage bi = new BufferedImage(5, 5, BufferedImage.TYPE_INT_RGB);
 		Graphics2D bigr = bi.createGraphics();
 		bigr.setColor(Color.orange);

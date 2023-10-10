@@ -12,7 +12,7 @@ public class TransformFrame extends BaseFrame {
 	}
 	
 	@Override
-	public void paint(Graphics2D g2) {
+	public void render(Graphics2D g2) {
 		int ancho = getSize().width;
 		int largo = getSize().height;
 		
