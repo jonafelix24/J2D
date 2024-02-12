@@ -8,6 +8,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import com.ryactiv.j2d.areas.AreaAddFrame;
+import com.ryactiv.j2d.areas.AreaExclusiveORFrame;
+import com.ryactiv.j2d.areas.AreaIntersectFrame;
+import com.ryactiv.j2d.areas.AreaSubFrame;
+import com.ryactiv.j2d.custom_shape.CustomShapeFrame;
+
 public class J2DMain extends JFrame implements ActionListener {
 	
 	private JButton btnAlpha;
@@ -17,6 +23,7 @@ public class J2DMain extends JFrame implements ActionListener {
 	private JButton btnComposite;
 	private JButton btnGeomShapes;
 	private JButton btnGeneralPath;
+	private JButton btnCustomShape;
 
 	public J2DMain() {
 		super("Ejemplos Java2D");
@@ -31,6 +38,7 @@ public class J2DMain extends JFrame implements ActionListener {
 		btnComposite = new JButton("Composite");
 		btnGeomShapes = new JButton("Geom shapes");
 		btnGeneralPath = new JButton("GeneralPath");
+		btnCustomShape = new JButton("CustomShape");
 		
 		containerPanel.add(btnAlpha);
 		containerPanel.add(btnTexture);
@@ -39,6 +47,7 @@ public class J2DMain extends JFrame implements ActionListener {
 		containerPanel.add(btnComposite);
 		containerPanel.add(btnGeomShapes);
 		containerPanel.add(btnGeneralPath);
+		containerPanel.add(btnCustomShape);
 		
 		btnAlpha.addActionListener(this);
 		btnTexture.addActionListener(this);
@@ -47,6 +56,35 @@ public class J2DMain extends JFrame implements ActionListener {
 		btnComposite.addActionListener(this);
 		btnGeomShapes.addActionListener(this);
 		btnGeneralPath.addActionListener(this);
+		btnCustomShape.addActionListener(this);
+		
+		JButton btnAreaAdd = new JButton("Area Add");
+		containerPanel.add(btnAreaAdd);
+		btnAreaAdd.addActionListener(e -> {
+		    AreaAddFrame frame = new AreaAddFrame(this);
+		    frame.setVisible(true);
+		});
+		
+		JButton btnAreaSub = new JButton("Area Sub");
+        containerPanel.add(btnAreaSub);
+        btnAreaSub.addActionListener(e -> {
+            AreaSubFrame frame = new AreaSubFrame(this);
+            frame.setVisible(true);
+        });
+        
+        JButton btnAreaInt = new JButton("Area Intersect");
+        containerPanel.add(btnAreaInt);
+        btnAreaInt.addActionListener(e -> {
+            AreaIntersectFrame frame = new AreaIntersectFrame(this);
+            frame.setVisible(true);
+        });
+        
+        JButton btnAreaXor = new JButton("Area XOR");
+        containerPanel.add(btnAreaXor);
+        btnAreaXor.addActionListener(e -> {
+            AreaExclusiveORFrame frame = new AreaExclusiveORFrame(this);
+            frame.setVisible(true);
+        });
 		
 		setSize(500, 300);
 		setLocationRelativeTo(null);
@@ -89,6 +127,11 @@ public class J2DMain extends JFrame implements ActionListener {
 			generalPathFrame.setVisible(true);
 			return;
 		}
+		if (e.getSource().equals(btnCustomShape)) {
+            CustomShapeFrame customShapeFrame = new CustomShapeFrame(this);
+            customShapeFrame.setVisible(true);
+            return;
+        }
 	}
 
 	public static void main(String[] args) {
