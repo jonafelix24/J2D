@@ -85,6 +85,20 @@ public class J2DMain extends JFrame implements ActionListener {
             AreaExclusiveORFrame frame = new AreaExclusiveORFrame(this);
             frame.setVisible(true);
         });
+        
+        JButton btnText = new JButton("Texto Parrafo");
+        containerPanel.add(btnText);
+        btnText.addActionListener(e -> {
+            TextFrame frame = new TextFrame(this);
+            frame.setVisible(true);
+        });
+        
+        JButton btnImage = new JButton("Imagen");
+        containerPanel.add(btnImage);
+        btnImage.addActionListener(e -> {
+            ImageExampleFrame frame = new ImageExampleFrame(this);
+            frame.setVisible(true);
+        });
 		
 		setSize(500, 300);
 		setLocationRelativeTo(null);
